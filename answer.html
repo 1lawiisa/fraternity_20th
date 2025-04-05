@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สายรหัสที่ 20</title>
+    <link rel="stylesheet" href="/css/answer.css">
+    <script src="/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">Whanla</a></div>
+        <nav>
+            <ul class="menu">
+                <!-- <li><a href="#">Home</a></li> -->
+                <li class="dropdown">
+                    <a href="#">Need a clue?</a>
+                    <ul class="submenu">
+                        <li><a href="/clue/clue1.html">Clue 1</a></li>
+                        <li><a href="/clue/clue2.html">Clue 2</a></li>
+                        <li class="dropdown">
+                            <!-- <a href="#">More</a>
+                            <ul class="submenu">
+                                <li><a href="#">Forensics</a></li>
+                                <li><a href="#">Binary Exploitation</a></li>
+                            </ul> -->
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/answer.html">Send Answer</a></li>
+                <!-- <li><a href="#">Profile</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>  
+        <section class="flag-input">  
+            <h3>Enter Ur Flag</h3>  
+            <input type="text" id="flagInput" placeholder="ได้ flag{xxx} แบบนี้แล้ว ส่งมาเลยน้อง">
+            <button onclick="checkFlag()">Submit</button>  
+            <div id="flagMessage"></div>
+            
+        </section>  
+    </main>  
+</body>
+</html>

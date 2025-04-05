@@ -1,0 +1,296 @@
+/* พื้นหลัง */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('/picture/quinn-nietfeld-dtSKdnEovx8-unsplash.jpg');
+    background-size: cover;        /* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+    background-position: center;
+    background-repeat: no-repeat;   /* ไม่ให้ทำซ้ำของรูป */
+    background-attachment: fixed;   /* ทำให้พื้นหลังคงที่เมื่อเลื่อนหน้าจอ */
+    font-family: "Sarabun", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+header {
+    background: #1e1e1e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* logo */
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+}
+/* end logo */
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu li {
+    position: relative;
+}
+.menu a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.menu a:hover {
+    color: #1db954;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: #222;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.submenu li {
+    display: block;
+}
+.submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+.submenu a:hover {
+    background: #333;
+}
+.dropdown:hover > .submenu {
+    display: block;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #1a1a1a, #2a2a2a); */
+}
+
+.flag-input {
+    background: rgba(30, 30, 30, 0.95);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(29, 185, 84, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 100%;
+    transform: translateY(-20px);
+    animation: floatIn 0.8s ease-out;
+}
+
+.flag-input h3 {
+    color: #1db954;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(29, 185, 84, 0.3);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.flag-input input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(29, 185, 84, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.flag-input input:focus {
+    outline: none;
+    border-color: #1db954;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.flag-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.flag-input button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1db954, #4CAF50);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.flag-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(29, 185, 84, 0.4);
+}
+
+.flag-input button:active {
+    transform: translateY(0);
+}
+
+.flag-input button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.flag-input button:hover::after {
+    left: 100%;
+}
+
+#flagMessage {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1em;
+    min-height: 24px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+#flagMessage.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(29, 185, 84, 0.5),
+                     0 0 30px rgba(29, 185, 84, 0.3);
+    }
+}
+
+/* Media Query สำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .flag-input {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    .flag-input h2 {
+        font-size: 2.2em;
+    }
+
+    .flag-input input,
+    .flag-input button {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
+
+/* js */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 999;
+    pointer-events: none;
+    animation: fireworks 2s ease-out forwards;
+}
+
+@keyframes fireworks {
+    0% {
+        background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%);
+    }
+    25% {
+        background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(255,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    75% {
+        background: radial-gradient(circle, rgba(0,255,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    100% {
+        background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%);
+    }
+}

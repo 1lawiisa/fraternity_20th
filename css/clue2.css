@@ -1,0 +1,244 @@
+/* พื้นหลัง */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('/picture/quinn-nietfeld-dtSKdnEovx8-unsplash.jpg');
+    background-size: cover;        /* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+    background-position: center;
+    background-repeat: no-repeat;   /* ไม่ให้ทำซ้ำของรูป */
+    background-attachment: fixed;   /* ทำให้พื้นหลังคงที่เมื่อเลื่อนหน้าจอ */
+    font-family: "Sarabun", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+header {
+    background: #1e1e1e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* logo */
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+}
+/* end logo */
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu li {
+    position: relative;
+}
+.menu a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.menu a:hover {
+    color: #1db954;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: #222;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.submenu li {
+    display: block;
+}
+.submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+.submenu a:hover {
+    background: #333;
+}
+.dropdown:hover > .submenu {
+    display: block;
+}
+.flag-input {
+    margin-top: 100px;
+}
+input {
+    padding: 10px;
+    width: 300px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #1db954;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #1ed760;
+}
+
+
+
+/* เนื้อหา */
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c0c0c;
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 20px
+        );
+    animation: backgroundMove 15s linear infinite;
+}
+
+.write-main {
+    position: relative;
+    padding: 3rem;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 
+        0 0 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    max-width: 800px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.write-main:hover {
+    transform: translateY(-5px);
+}
+
+.write-main h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.write-main h2 span {
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    margin: 0 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.write-main h2 span:hover {
+    background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .write-main {
+        margin: 1rem;
+        padding: 2rem;
+    }
+    
+    .write-main h2 {
+        font-size: 1.8rem;
+    }
+}

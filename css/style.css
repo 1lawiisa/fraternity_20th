@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* พื้นหลัง */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('/picture/quinn-nietfeld-dtSKdnEovx8-unsplash.jpg');
+    background-size: cover;        /* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+    background-position: center;
+    background-repeat: no-repeat;   /* ไม่ให้ทำซ้ำของรูป */
+    background-attachment: fixed;   /* ทำให้พื้นหลังคงที่เมื่อเลื่อนหน้าจอ */
+    font-family: "Sarabun", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+header {
+    background: #1e1e1e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* logo */
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(120deg, #1db954, #4CAF50);
+    transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+}
+/* end logo */
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu li {
+    position: relative;
+}
+.menu a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.menu a:hover {
+    color: #1db954;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: #222;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.submenu li {
+    display: block;
+}
+.submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+.submenu a:hover {
+    background: #333;
+}
+.dropdown:hover > .submenu {
+    display: block;
+}
+.flag-input {
+    margin-top: 100px;
+}
+/* input {
+    padding: 10px;
+    width: 300px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #1db954;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #1ed760;
+} */
+
+/* body */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.flag-input {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(115, 116, 131, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 600px;
+    width: 100%;
+    transform: translateY(-40px);
+}
+
+.flag-input h2 {
+    color: #1db954;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+    animation: glow 1.5s ease-in-out infinite alternate;
+    font-family: "Charm", cursive;
+}
+
+.flag-input p {
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+    font-family: "Sarabun", sans-serif;
+}
+.flag-input h5 {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+    font-family: "Sarabun", sans-serif;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(29, 185, 84, 0.5),
+                     0 0 30px rgba(29, 185, 84, 0.3);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Query สำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .flag-input {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    .flag-input h2 {
+        font-size: 2em;
+    }
+
+    .flag-input p {
+        font-size: 1.1em;
+    }
+}
