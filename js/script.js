@@ -13,7 +13,7 @@ function checkFlag() {
         sessionStorage.setItem('ctfAccessToken', accessToken);
         
         setTimeout(() => {
-            window.location.href = '/success.html';
+            window.location.href = './success.html';
         }, 2000);
     } else {
         showMessage("❌ Wrong flag, try again!");
