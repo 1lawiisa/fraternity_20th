@@ -9,7 +9,7 @@ function checkFlag() {
         // ถ้าถูกต้อง เก็บค่าลง sessionStorage  
         sessionStorage.setItem('ctfPassword', correctFlag);  
         // เปลี่ยนไปยังหน้า Success Page  
-        window.location.href = 'success.html';   
+        window.location.href = '../success.html';   
     } else {  
         // ถ้าผิดแสดงข้อความเตือน  
         alert("❌ Wrong flag, try again!");  
