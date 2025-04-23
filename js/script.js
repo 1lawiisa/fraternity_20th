@@ -1,43 +1,30 @@
 function checkFlag() {
-    // flag{20th_gen_secret_4bcd3f!_decode_this}
     const flagInput = document.getElementById('flagInput').value;
-    
+    console.log("Flag input:", flagInput); // ตรวจสอบค่าที่กรอกเข้ามา
+
+    // เช็ค flag ที่กรอก
     if (flagInput === "flag{20th_gen_secret_4bcd3f!_decode_this}") {
-        showMessage("🎉 Congratulations! That's the correct flag!");
-        document.getElementById('flagMessage').style.color = "#1db954";
-        
-        createFireworks();
-        
-        // เก็บค่า token ใน Session Storage
+        console.log("Flag ถูกต้อง");
+
         const accessToken = generateToken();
-        sessionStorage.setItem('ctfAccessToken', accessToken);
-        
+        console.log("Generated token:", accessToken); // ดู token ที่สร้าง
+
+        sessionStorage.setItem('ctfAccessToken', accessToken); // เก็บค่า token ใน sessionStorage
         setTimeout(() => {
-            window.location.href = './success.html';
+            window.location.href = 'success.html';
         }, 2000);
     } else {
+        console.log("Flag ผิด");
         showMessage("❌ Wrong flag, try again!");
-        document.getElementById('flagMessage').style.color = "#ff4444";
     }
 }
 
-// ฟังก์ชันสร้าง token
+// สร้าง token
 function generateToken() {
     return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
 
-// เพิ่มฟังก์ชัน effect พลุ
-function createFireworks() {
-    const fireworks = document.createElement('div');
-    fireworks.className = 'fireworks';
-    document.body.appendChild(fireworks);
-    
-    // ลบ element พลุหลังจาก animation จบ
-    setTimeout(() => {
-        fireworks.remove();
-    }, 2000);
-}
-
+// แสดงข้อความ
 function showMessage(message) {
     const messageElement = document.getElementById('flagMessage');
     messageElement.textContent = message;
@@ -50,5 +37,3 @@ function showMessage(message) {
         }, 500);
     }
 }
-
-
