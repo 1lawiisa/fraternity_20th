@@ -12,7 +12,6 @@
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // แค่เช็คว่ามี token หรือเปล่า ไม่ต้องเปรียบเทียบ
       const storedToken = sessionStorage.getItem('ctfAccessToken');
 
       if (!storedToken) {
