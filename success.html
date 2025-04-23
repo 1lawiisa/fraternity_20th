@@ -12,10 +12,9 @@
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const correctFlag = "flag{20th_gen_secret_4bcd3f!_decode_this}";
-      const storedFlag = sessionStorage.getItem('ctfAccessToken');
+      const accessToken = sessionStorage.getItem('ctfAccessToken');
 
-      if (storedFlag !== correctFlag) {
+      if (!accessToken) {
         window.location.href = 'index.html';
       } else {
         document.body.style.display = 'block';
