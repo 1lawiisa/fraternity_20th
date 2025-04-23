@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: url('picture/quinn-nietfeld-dtSKdnEovx8-unsplash.jpg');
+    background-image: url('../picture/quinn-nietfeld-dtSKdnEovx8-unsplash.jpg');
     background-size: cover;        /* ปรับขนาดรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
     background-position: center;
     background-repeat: no-repeat;   /* ไม่ให้ทำซ้ำของรูป */
