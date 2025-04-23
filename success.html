@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>สายรหัสที่ 20</title>
   <link rel="stylesheet" href="css/success.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const correctFlag = "flag{20th_gen_secret_4bcd3f!_decode_this}";
+      const storedFlag = sessionStorage.getItem('ctfPassword');
+
+      if (storedFlag !== correctFlag) {
+        alert("⛔ ยังไม่ได้ปลดล็อก เข้าหน้าหลักเพื่อกรอก flag ก่อน");
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="success-container">
