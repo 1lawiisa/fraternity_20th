@@ -13,7 +13,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const correctFlag = "flag{20th_gen_secret_4bcd3f!_decode_this}";
-      const storedFlag = sessionStorage.getItem('ctfPassword');
+      const storedFlag = sessionStorage.getItem('ctfAccessToken');
 
       if (storedFlag !== correctFlag) {
         window.location.href = 'index.html';
