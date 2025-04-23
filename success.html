@@ -12,12 +12,12 @@
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const storedToken = sessionStorage.getItem('ctfAccessToken');
+      const storedToken = sessionStorage.getItem('ctfAccessToken'); // ตรวจสอบค่า token ใน sessionStorage
 
       if (!storedToken) {
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // ถ้าไม่มี token ให้ไปหน้า index.html
       } else {
-        document.body.style.display = 'block';
+        document.body.style.display = 'block'; // ถ้ามีให้แสดงหน้า success
       }
     });
   </script>
